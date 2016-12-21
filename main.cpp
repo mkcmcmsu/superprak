@@ -25,14 +25,14 @@ double F(const double x, const double y) {
     double t = 1.0 + 1.0*x*y;
     if (t == 0)
     	throw std::runtime_error("Error in computing 'F' function");
-    return (x*x + y*y)/(t*t);
+    return (x*x + y*y)*(sin(t));
 }
 
 double phi(const double x, const double y) {
     double t = 1.0 + 1.0 * x*y;
     if (t <= 0)
         throw std::runtime_error("Error in computing 'phi' function");
-    return log(t);
+    return 1.0+sin(t);
 }
 
 
@@ -520,9 +520,9 @@ int main (int argc, char** argv) {
 	clock_t begin = clock();
 
 	const double A1 = 0.0;
-	const double A2 = 3.0;
+	const double A2 = 2.0;
 	const double B1 = 0.0;
-	const double B2 = 3.0;
+	const double B2 = 2.0;
 
 	const int N1 = atoi(argv[1]);
 	const int N2 = atoi(argv[2]);
